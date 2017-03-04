@@ -1,0 +1,62 @@
+
+Q1. height:200px;line-height：200px; 为何能使文本【侧栏、主栏】垂直居中？
+Q2. 清楚浮动
+`
+    .clearfix:after{
+        content:'.';
+        display:table;
+        clear:both;
+        }
+    .clearfix{*zoom:1;}`
+    什么意思？
+    
+```
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UET-8">
+ 
+<style>
+ 
+    .parent{
+        width:810px;
+        height:200px;
+        margin:0 auto;
+        text-align:center;
+        font-size:26px;
+        line-height: 200px;
+        color:white;
+        }
+ 
+    .side{  
+        width:200px;
+        height:200px;
+        background:#c00000;
+        margin-right:10px;
+        float: left;
+        }
+ 
+    .main{
+        width:600px;
+        height:200px;
+        background:#4f81bd;
+        float:left;
+        }
+ 
+    .clearfix:after{
+        content:'.';
+        display:table;
+        clear:both;
+        }
+    .clearfix{*zoom:1;}
+</style>
+</head>
+ 
+    <body>
+    <div class="parent clearfix">
+        <div class="side">侧栏</div>
+        <div class="main">主栏</div>
+    </div>
+    </body>
+ 
+<html>```
